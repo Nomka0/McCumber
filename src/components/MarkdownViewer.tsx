@@ -23,74 +23,75 @@ interface MarkdownViewerProps {
   onGoToCube: () => void;
 }
 
+// ponytail: compact top layout and TOC offset aligned with slim header
 export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   onGoToCube,
 }) => {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div className="mx-auto max-w-7xl px-4 py-4 sm:py-6 sm:px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Table of Contents Sidebar (Solo Índice) */}
         <aside className="lg:col-span-3 order-2 lg:order-1">
-          <div className="sticky top-20 border border-neutral-800 bg-neutral-900/90 p-5 backdrop-blur-md">
-            <div className="flex items-center gap-2 pb-3 border-b border-neutral-800">
+          <div className="sticky top-14 border border-neutral-800 bg-neutral-900/90 p-4 backdrop-blur-md">
+            <div className="flex items-center gap-2 pb-2.5 border-b border-neutral-800">
               <List className="h-4 w-4 text-cyan-400" />
               <span className="text-xs font-bold uppercase tracking-wider text-neutral-300">
                 Índice del Documento
               </span>
             </div>
 
-            <nav className="mt-4 space-y-1 text-xs text-neutral-400 font-medium">
+            <nav className="mt-3 space-y-0.5 text-xs text-neutral-400 font-medium">
               <a
                 href="#introduccion"
-                className="block px-2.5 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
+                className="block px-2 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
               >
                 1. Introducción y Contexto
               </a>
               <a
                 href="#dimensiones"
-                className="block px-2.5 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
+                className="block px-2 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
               >
                 2. Las Tres Dimensiones
               </a>
               <a
                 href="#eje-cia"
-                className="block pl-5 text-neutral-500 hover:text-neutral-300 transition-colors"
+                className="block pl-4 text-neutral-500 hover:text-neutral-300 transition-colors"
               >
                 • Metas CIA (Y)
               </a>
               <a
                 href="#eje-estados"
-                className="block pl-5 text-neutral-500 hover:text-neutral-300 transition-colors"
+                className="block pl-4 text-neutral-500 hover:text-neutral-300 transition-colors"
               >
                 • Estados de Datos (X)
               </a>
               <a
                 href="#eje-salvaguardas"
-                className="block pl-5 text-neutral-500 hover:text-neutral-300 transition-colors"
+                className="block pl-4 text-neutral-500 hover:text-neutral-300 transition-colors"
               >
                 • Salvaguardas (Z)
               </a>
               <a
                 href="#matriz-27"
-                className="block px-2.5 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
+                className="block px-2 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
               >
                 3. Matriz de 27 Intersecciones
               </a>
               <a
                 href="#caso-practico"
-                className="block px-2.5 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
+                className="block px-2 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
               >
                 4. Caso Práctico de Diagnóstico
               </a>
               <a
                 href="#marcos-internacionales"
-                className="block px-2.5 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
+                className="block px-2 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
               >
                 5. Relación con ISO 27001 y NIST
               </a>
               <a
                 href="#conclusion"
-                className="block px-2.5 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
+                className="block px-2 py-1.5 hover:bg-neutral-800 hover:text-white transition-colors"
               >
                 6. Conclusión
               </a>
@@ -101,9 +102,9 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
         {/* Main Article Content */}
         <main className="lg:col-span-9 order-1 lg:order-2">
           {/* Document Header Card */}
-          <div className="mb-8 border border-neutral-800 bg-neutral-900/90 p-6 backdrop-blur-md shadow-xl">
+          <div className="mb-5 border border-neutral-800 bg-neutral-900/90 p-4 sm:p-5 backdrop-blur-md shadow-lg">
             {/* Metadata Bar */}
-            <div className="flex flex-wrap items-center gap-4 text-xs text-neutral-400 pb-4 border-b border-neutral-800 font-mono">
+            <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-400 pb-3 border-b border-neutral-800 font-mono">
               <div className="flex items-center gap-1.5">
                 <User className="h-3.5 w-3.5 text-blue-400" />
                 <span>John McCumber</span>
@@ -118,37 +119,37 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
               </div>
               <div className="flex items-center gap-1.5">
                 <FileText className="h-3.5 w-3.5 text-amber-400" />
-                <span>Ciberseguridad y Gestión de Riesgos</span>
+                <span>Ciberseguridad y Riesgos</span>
               </div>
             </div>
 
             {/* Title */}
-            <div className="mt-4">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+            <div className="mt-3">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
                 Cubo de McCumber: Modelo Integral de Ciberseguridad
               </h1>
-              <p className="mt-2 text-sm sm:text-base text-neutral-300 leading-relaxed">
-                Marco conceptual para evaluar y diseñar programas de seguridad de la información cubriendo las 27 intersecciones entre la <strong>Tríada CIA</strong>, los <strong>Estados de los Datos</strong> y las <strong>Salvaguardas Multidisciplinarias</strong>.
+              <p className="mt-1.5 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                Marco conceptual para evaluar y diseñar programas de seguridad cubriendo las 27 intersecciones entre la <strong>Tríada CIA</strong>, los <strong>Estados de Datos</strong> y las <strong>Salvaguardas</strong>.
               </p>
             </div>
 
             {/* BANNER CTA: EXPLORAR CUBO 3D */}
-            <div className="mt-6 border border-cyan-500/50 bg-gradient-to-r from-cyan-950/70 via-blue-950/60 to-neutral-950 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg shadow-cyan-950/40">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-cyan-500 text-black font-black">
-                  <Box className="h-6 w-6 text-neutral-950" />
+            <div className="mt-4 border border-cyan-500/50 bg-gradient-to-r from-cyan-950/70 via-blue-950/60 to-neutral-950 p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md shadow-cyan-950/40">
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center bg-cyan-500 text-black font-black">
+                  <Box className="h-4 w-4 text-neutral-950" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-black uppercase tracking-wider text-cyan-300">
                       Experiencia Interactiva 3D
                     </span>
-                    <span className="bg-cyan-400 text-neutral-950 text-[10px] font-mono font-bold px-1.5 py-0.2">
+                    <span className="bg-cyan-400 text-neutral-950 text-[10px] font-mono font-bold px-1 py-0.2">
                       NUEVO
                     </span>
                   </div>
                   <p className="text-xs text-neutral-300">
-                    Interactúa directamente con las 27 celdas sólidas, rota en 360° y visualiza cada salvaguarda.
+                    Interactúa con las 27 celdas sólidas y rota en 360°.
                   </p>
                 </div>
               </div>
@@ -156,10 +157,10 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
               <button
                 id="banner-goto-cube-btn"
                 onClick={onGoToCube}
-                className="w-full sm:w-auto shrink-0 flex items-center justify-center gap-2 bg-cyan-400 hover:bg-cyan-300 text-neutral-950 px-5 py-2.5 text-xs font-black uppercase tracking-wider border border-cyan-200 shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all hover:scale-[1.02] active:scale-95"
+                className="w-full sm:w-auto shrink-0 flex items-center justify-center gap-1.5 bg-cyan-400 hover:bg-cyan-300 text-neutral-950 px-3.5 py-1.5 text-xs font-black uppercase tracking-wider border border-cyan-200 shadow-sm transition-all hover:scale-[1.02] active:scale-95"
               >
                 <span>Explorar Cubo 3D</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </button>
             </div>
           </div>

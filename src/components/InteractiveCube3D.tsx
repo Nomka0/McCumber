@@ -483,62 +483,63 @@ export const InteractiveCube3D: React.FC = () => {
     return { ...base, title, category, icon, brightness };
   };
 
+  // ponytail: streamlined compact top banner to prioritize immediate 3D cube visibility
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
       {/* Introduction Banner */}
-      <div className="mb-6 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4 sm:p-6 backdrop-blur-sm">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div className="mb-4 rounded-xl border border-neutral-800 bg-neutral-900/60 p-3 sm:p-4 backdrop-blur-sm">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+              <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-400">
                 Visualizador Interactivo 3D
               </span>
             </div>
-            <h2 className="mt-1 text-xl font-bold text-white sm:text-2xl">
+            <h2 className="mt-0.5 text-lg font-bold text-white sm:text-xl">
               Explorador Tridimensional del Cubo de McCumber
             </h2>
-            <p className="mt-1 text-sm text-neutral-400 max-w-3xl">
-              Arrastra el cubo con el ratón o el dedo para girarlo en cualquier ángulo. Haz clic en cualquiera de los <strong>27 cubos individuales</strong> para analizar el objetivo, los controles tecnológicos, las políticas organizacionales y el factor humano en esa celda específica.
+            <p className="mt-1 text-xs sm:text-sm text-neutral-400 max-w-3xl leading-snug">
+              Arrastra el cubo para girarlo en 360°. Haz clic en cualquiera de las <strong>27 celdas</strong> para inspeccionar objetivos CIA, controles y salvaguardas.
             </p>
 
             {/* Instruction Trigger Buttons in Banner */}
-            <div className="mt-3 flex flex-wrap items-center gap-2">
+            <div className="mt-2.5 flex flex-wrap items-center gap-2">
               <button
                 id="btn-open-instructions-banner"
                 onClick={() => setShowInstructionsModal(true)}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600/25 hover:bg-blue-600/35 border border-blue-500/40 px-3 py-1.5 text-xs font-semibold text-blue-300 transition-colors shadow-sm"
+                className="inline-flex items-center gap-1 rounded-lg bg-blue-600/25 hover:bg-blue-600/35 border border-blue-500/40 px-2.5 py-1 text-xs font-semibold text-blue-300 transition-colors"
               >
-                <HelpCircle className="h-4 w-4 text-blue-400" />
-                <span>¿Cómo usar el Cubo 3D? (Instrucciones)</span>
+                <HelpCircle className="h-3.5 w-3.5 text-blue-400" />
+                <span>¿Cómo usar el Cubo 3D?</span>
               </button>
               <button
                 onClick={scrollToInstructions}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-neutral-800/80 hover:bg-neutral-700/80 border border-neutral-700/60 px-3 py-1.5 text-xs font-medium text-neutral-300 transition-colors"
+                className="inline-flex items-center gap-1 rounded-lg bg-neutral-800/80 hover:bg-neutral-700/80 border border-neutral-700/60 px-2.5 py-1 text-xs font-medium text-neutral-300 transition-colors"
               >
                 <BookOpen className="h-3.5 w-3.5 text-neutral-400" />
-                <span>Manual Rápido Paso a Paso</span>
+                <span>Manual Rápido</span>
               </button>
             </div>
           </div>
 
           {/* Quick Stats Pill */}
-          <div className="flex flex-wrap gap-2 sm:gap-3">
-            <div className="rounded-xl border border-blue-500/30 bg-blue-500/10 px-3 py-2 text-center">
-              <div className="text-xs text-blue-300 font-medium">Metas (CIA)</div>
-              <div className="text-lg font-bold text-blue-400">3 Ejes</div>
+          <div className="flex flex-wrap gap-2">
+            <div className="rounded-lg border border-blue-500/30 bg-blue-500/10 px-2.5 py-1 text-center min-w-[70px]">
+              <div className="text-[10px] text-blue-300 font-medium">Metas (CIA)</div>
+              <div className="text-sm font-bold text-blue-400">3 Ejes</div>
             </div>
-            <div className="rounded-xl border border-purple-500/30 bg-purple-500/10 px-3 py-2 text-center">
-              <div className="text-xs text-purple-300 font-medium">Estados</div>
-              <div className="text-lg font-bold text-purple-400">3 Fases</div>
+            <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 px-2.5 py-1 text-center min-w-[70px]">
+              <div className="text-[10px] text-purple-300 font-medium">Estados</div>
+              <div className="text-sm font-bold text-purple-400">3 Fases</div>
             </div>
-            <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-2 text-center">
-              <div className="text-xs text-emerald-300 font-medium">Medidas</div>
-              <div className="text-lg font-bold text-emerald-400">3 Tipos</div>
+            <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-center min-w-[70px]">
+              <div className="text-[10px] text-emerald-300 font-medium">Medidas</div>
+              <div className="text-sm font-bold text-emerald-400">3 Tipos</div>
             </div>
-            <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-center">
-              <div className="text-xs text-amber-300 font-medium">Intersecciones</div>
-              <div className="text-lg font-bold text-amber-400">27 Celdas</div>
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-center min-w-[70px]">
+              <div className="text-[10px] text-amber-300 font-medium">Celdas</div>
+              <div className="text-sm font-bold text-amber-400">27 Celdas</div>
             </div>
           </div>
         </div>

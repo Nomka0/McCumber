@@ -75,21 +75,22 @@ ${cell.controls.map((c) => `  * ${c}`).join('\n')}
     }
   };
 
+  // ponytail: compact top section and filter spacing
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-4 sm:py-6 sm:px-6">
       {/* Title & Filter Bar */}
-      <div className="mb-6 flex flex-col gap-4">
+      <div className="mb-4 flex flex-col gap-2.5">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400" />
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-400">
               Matriz Tridimensional Completa
             </span>
           </div>
-          <h2 className="mt-1 text-xl sm:text-2xl font-bold text-white">
+          <h2 className="mt-0.5 text-lg sm:text-xl font-bold text-white">
             Las 27 Intersecciones de Ciberseguridad de McCumber
           </h2>
-          <p className="mt-1 text-xs sm:text-sm text-neutral-400">
+          <p className="mt-0.5 text-xs text-neutral-400">
             Explora, busca y filtra los controles de seguridad correspondientes a cada estado, meta y disciplina.
           </p>
         </div>
