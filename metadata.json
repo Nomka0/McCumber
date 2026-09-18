@@ -1,0 +1,6 @@
+{
+  "name": "Cubo de McCumber",
+  "description": "Guía interactiva y completa del Cubo de McCumber (Tríada CIA, Estados de la Información y Salvaguardas) para ciberseguridad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
